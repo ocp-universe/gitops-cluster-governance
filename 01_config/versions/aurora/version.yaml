@@ -6,12 +6,12 @@ versions:
   applications:
     # Catalog Source
     snapshot_pipeline:
-      revision: HEAD
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
       version: v4.10_2022_06_06   
     # Operators
     patch_operator:
-      revision: HEAD
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
     sealed_secrets:
-      revision: HEAD    
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf    
     external_secrets:
-      revision: HEAD
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
