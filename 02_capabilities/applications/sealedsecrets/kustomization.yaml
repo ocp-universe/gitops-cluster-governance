@@ -13,6 +13,4 @@ patchesJSON6902:
       name: sealed-secrets-controller
     patch: |-
       - op: remove
-        path: /spec/template/spec/containers/0/securityContext/runAsUser
-      - op: remove
         path: /spec/template/spec/securityContext
