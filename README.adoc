@@ -18,6 +18,24 @@ This projects represents the main IT architecture/governance configuration for m
 * Kubernetes Cluster
 * Helm v3 and Kustomize
 
+== Setup
+
+* Install ArgoCD / OpenShift GitOps (usually part of the cluster provisioning)
+* Apply the bootstrap `ApplicationSet`
+
+----
+$ helm template a 00_bootstrap/01_gitops --output-dir=work/gitops
+wrote work/gitops/gitops-cluster-gov-gitops/templates/02-gitops.yaml
+wrote work/gitops/gitops-cluster-gov-gitops/templates/02-gitops.yaml
+
+$ oc apply -f work/gitops/gitops-cluster-gov-gitops/templates/02-gitops.yaml
+subscription.operators.coreos.com/openshift-gitops created
+----
+
+----
+
+----
+
 == Summary
 
 GitOps and IT-Governance to manage a Kubernetes/OpenShift cluster which serves as platform and foundation for the requirments of the teams. 

@@ -40,7 +40,7 @@ spec:
       source:
         path: 01_config/clusters/{{`{{ cluster.name }}`}}/waves
         repoURL: '{{ .repo }}'
-        targetRevision: "{{`{{ version.revision }}`}}"
+        targetRevision: "{{`{{ versions.revision }}`}}"
       syncPolicy:
         automated:
           prune: false

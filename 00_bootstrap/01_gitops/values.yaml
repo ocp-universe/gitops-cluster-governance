@@ -14,5 +14,5 @@ config:
     # install OpenShift GitOps or not
     install: true
     # update strategy: Manual | Automatic
-    updateStrategy: Manual
+    updateStrategy: Automatic
     channel: gitops-1.8
