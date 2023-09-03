@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: as-core-wave-0
+  name: as-core-wave-100
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "100"
 spec:
   generators:
   - matrix:
@@ -31,13 +31,13 @@ spec:
     preserveResourcesOnDeletion: true
   template:
     metadata:
-      name: core-wave-0
+      name: core-wave-100
     spec:
       project: default
       source:
         repoURL: REPLACE_ME_URL
         targetRevision: "{{ versions.revision }}"
-        path: 01_config/clusters/{{ cluster.name }}/waves/0
+        path: 01_config/clusters/{{ cluster.name }}/waves/100
       destination:
         server: https://kubernetes.default.svc
       syncPolicy:

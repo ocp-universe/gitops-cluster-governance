@@ -33,7 +33,11 @@ subscription.operators.coreos.com/openshift-gitops created
 ----
 
 ----
+$ helm template a 00_bootstrap/02_init --output-dir=work/init
+wrote work/init/gitops-cluster-gov-bootstrap/templates/argocd-app-bootstrap.yaml
 
+$ oc apply -f work/init/gitops-cluster-gov-bootstrap/templates/argocd-app-bootstrap.yaml
+applicationset.argoproj.io/as-overall-bootstrap created
 ----
 
 == Summary
