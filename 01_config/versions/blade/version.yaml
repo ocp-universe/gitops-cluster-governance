@@ -13,5 +13,5 @@ versions:
       revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
     sealed_secrets:
       revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf    
-#    external_secrets:
-#      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+    external_secrets:
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
