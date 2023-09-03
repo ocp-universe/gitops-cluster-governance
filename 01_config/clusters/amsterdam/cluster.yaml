@@ -1,0 +1,11 @@
+# Cluster platform information
+cluster:
+  name: amsterdam
+  env: dev
+  platform_version: aurora
+  
+versions:
+  applications:
+    external_secrets_instance:
+      revision: HEAD
+  

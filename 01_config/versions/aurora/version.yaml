@@ -1,0 +1,15 @@
+versions:
+  ocp: 4.10.36
+  ocp_major: "4.10"
+  revision: HEAD
+  catalog_sources:
+    snapshot_pipeline:
+      revision: HEAD
+      version: v4.10_2022_06_06    
+  applications:
+    patch_operator:
+      revision: HEAD
+    sealed_secrets:
+      revision: HEAD    
+    external_secrets:
+      revision: HEAD

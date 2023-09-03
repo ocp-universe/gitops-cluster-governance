@@ -1,0 +1,12 @@
+# Cluster Governance Configuration
+
+config:
+
+  projects:   
+    # Common cluster configuration and capabilities for all teams/projects
+    - name: gov-cluster-config
+      clusterName: amsterdam
+      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+      branch: main
+      path: '.'
+      

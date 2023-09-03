@@ -13,6 +13,11 @@ toc::[]
 
 This projects represents the main IT architecture/governance configuration for managing a cluster which serves as platform for various teams with different Kubernetes/OpenShift capabilities. Using the GitOps approach.
 
+== Prerequisites
+
+* Kubernetes Cluster
+* Helm v3 and Kustomize
+
 == Summary
 
 GitOps and IT-Governance to manage a Kubernetes/OpenShift cluster which serves as platform and foundation for the requirments of the teams. 

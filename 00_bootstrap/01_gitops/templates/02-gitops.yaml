@@ -1,0 +1,15 @@
+# Operator: OpenShift GitOps
+{{- if .Values.config.gitops.install }}
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-gitops
+  namespace: openshift-operators
+spec:
+  channel: {{ .Values.config.gitops.channel | default "stable" }}
+  installPlanApproval: {{ .Values.config.gitops.updateStrategy | default "Manual" }}
+  name: openshift-gitops-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+{{- end }}
