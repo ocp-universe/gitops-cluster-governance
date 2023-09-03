@@ -46,6 +46,9 @@ applicationset.argoproj.io/as-overall-bootstrap created
 ----
 $ git tag -a release-aurora -m "Release Aurora" 
 $ git push origin release-aurora
+
+$ # update version.yaml 
+$ git push
 ----
 
 == Summary
