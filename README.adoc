@@ -1,0 +1,40 @@
+= GitOps - Cluster Governance
+:author: Hafid Haddouti
+:toc: macro
+:toclevels: 4
+:sectlinks:
+:sectanchors:
+
+GitOps. 
+
+toc::[]
+
+== Overview
+
+This projects represents the main IT architecture/governance configuration for managing a cluster which serves as platform for various teams with different Kubernetes/OpenShift capabilities. Using the GitOps approach.
+
+== Summary
+
+GitOps and IT-Governance to manage a Kubernetes/OpenShift cluster which serves as platform and foundation for the requirments of the teams. 
+
+
+== References
+
+* ArgoCD - link:https://argo-cd.readthedocs.io/en/stable/[]
+* Managing GitOps control planes for secure GitOps practices - link:https://developers.redhat.com/articles/2021/08/03/managing-gitops-control-planes-secure-gitops-practices[]
+
+== Open
+
+N/A
+
+
+== License
+
+This article is licensed under the Apache License, Version 2.
+Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant
+to their own separate licenses. Contributions are subject to the
+link:https://developercertificate.org/[Developer Certificate of Origin, Version 1.1] and the
+link:https://www.apache.org/licenses/LICENSE-2.0.txt[Apache License, Version 2].
+
+See also link:https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN[Apache License FAQ]
+.
