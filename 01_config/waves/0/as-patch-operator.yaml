@@ -25,8 +25,6 @@ spec:
               - path: 01_config/clusters/{{ cluster.name }}/cluster.yaml
           mergeKeys:
           - versions
-  syncPolicy:
-    preserveResourcesOnDeletion: true
   template:
     metadata:
       name: core-patch-operator

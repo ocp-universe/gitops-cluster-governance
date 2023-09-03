@@ -6,7 +6,12 @@
 
 ## Capabilities
 
-* ABCD
+| Cap    | Type | Version/Channel |
+| -------- | ------- | ------ |
+| Pipeline  | Catalog Source | `v4.10_2022_06_06` |
+| Patch | Operator | `alpha` |
+| Sealed Secrets | App | `v0.23.1` |
+| External Secrets | Operator | `stable` |
 
 
 ### New
