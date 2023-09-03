@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-- ../../../waves/50
+- ../../../../waves/50
 - as-external-secrets-instance.yaml
 
 components:
