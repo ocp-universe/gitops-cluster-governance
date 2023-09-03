@@ -3,9 +3,10 @@ cluster:
   name: amsterdam
   env: dev
   platform_version: aurora
-  
+
+# Overwriting version details for specific capabilities
 versions:
   applications:
     external_secrets_instance:
-      revision: HEAD
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
   
