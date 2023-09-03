@@ -4,10 +4,7 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-- ../../../waves/ 
-- ./0
-- ./50
-- ./100
+- ../../../waves/
 
 components:
 - patch-cluster-config/
