@@ -2,11 +2,13 @@ versions:
   ocp: 4.10.36
   ocp_major: "4.10"
   revision: HEAD
-  catalog_sources:
+     
+  applications:
+    # Catalog Source
     snapshot_pipeline:
       revision: HEAD
-      version: v4.10_2022_06_06    
-  applications:
+      version: v4.10_2022_06_06   
+    # Operators
     patch_operator:
       revision: HEAD
     sealed_secrets:

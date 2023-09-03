@@ -34,8 +34,8 @@ spec:
       project: default
       source:
         repoURL: REPLACE_ME_URL
-        targetRevision: "{{ versions.catalog_sources.snapshot_pipeline.revision }}"
-        path: 02_capabilities/catalog-sources/pipelines-snapshot/overlays/{{ versions.catalog_sources.snapshot_pipeline.version }}
+        targetRevision: "{{ versions.applications.snapshot_pipeline.revision }}"
+        path: 02_capabilities/catalog-sources/pipelines-snapshot/overlays/{{ versions.applications.snapshot_pipeline.version }}
       destination:
         server: https://kubernetes.default.svc
       syncPolicy:
