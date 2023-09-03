@@ -1,7 +1,7 @@
 versions:
   ocp: 4.10.36
   ocp_major: "4.10"
-  revision: release-aurora
+  revision: HEAD
      
   applications:
     # Catalog Source
