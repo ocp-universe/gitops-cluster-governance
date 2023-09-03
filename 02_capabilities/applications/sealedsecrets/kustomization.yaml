@@ -6,6 +6,7 @@ namespace: sealed-secrets
 resources:
 - namespace.yaml
 - controller.yaml
+- rbac.yaml
 
 # OpenShift related
 patchesJSON6902:
