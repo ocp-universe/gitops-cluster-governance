@@ -40,6 +40,14 @@ $ oc apply -f work/init/gitops-cluster-gov-bootstrap/templates/argocd-app-bootst
 applicationset.argoproj.io/as-overall-bootstrap created
 ----
 
+== Workflow
+
+.Create a new version and bind the version to the tag
+----
+$ git tag -a release-aurora -m "Release Aurora" 
+$ git push origin release-aurora
+----
+
 == Summary
 
 GitOps and IT-Governance to manage a Kubernetes/OpenShift cluster which serves as platform and foundation for the requirments of the teams. 
