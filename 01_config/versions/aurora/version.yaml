@@ -35,7 +35,7 @@ versions:
     - name: sealed-secrets
       enabled: true
       repo: https://github.com/ocp-universe/gitops-cluster-governance.git
-      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+      revision: main
       path: 02_capabilities/applications/sealedsecrets
     - name: eso
       enabled: false
