@@ -4,7 +4,7 @@ versions:
   #revision: main
   #revision: release-blade
   revision: f270176e60c88704a5d3d04556e507f75969ff4e
-     
+
   applications:
     # Catalog Source
     snapshot_pipeline:
@@ -48,6 +48,12 @@ versions:
         repo: https://github.com/ocp-universe/gitops-cluster-governance.git
         revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
         path: 02_capabilities/applications/external-secrets-operator
+      eso:
+        name: pipelines
+        enabled: true
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: main
+        path: 02_capabilities/applications/openshift-pipelines/overlays/pipelines-1.8
     # ####################################  
     # Individual add-ons  
     addons: 

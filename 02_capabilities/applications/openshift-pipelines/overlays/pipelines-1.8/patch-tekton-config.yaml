@@ -1,0 +1,73 @@
+# #########
+# Patch configuration, roles and patch template
+# Configure OCP Pipelines TektonConfig kind
+# #########
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: patch-tekton-config
+rules:
+  - apiGroups:
+      - operator.tekton.dev
+    resources:
+      - tektonconfigs
+    verbs:
+      - get
+      - list
+      - patch
+      - update
+      - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: patch-tekton-config
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: patch-tekton-config
+subjects:
+  - kind: ServiceAccount
+    name: patch-tekton-config
+    namespace: pipelines-operator
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: patch-tekton-config
+  namespace: pipelines-operator
+---
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: Patch
+metadata:
+  name: patch-tekton-config
+  namespace: pipelines-operator
+spec:
+  serviceAccountRef:
+    name: patch-tekton-config
+  patches:
+    tekton-config-patch:
+      patchType: application/merge-patch+json
+      targetObjectRef:
+        apiVersion: operator.tekton.dev/v1alpha1
+        kind: TektonConfig
+        name: config
+      patchTemplate: |
+        spec:
+          addon:
+            # Disable PipelineAsCode
+            # Feature is still TP in OCP Pipelines 1.7
+            # avoid the usage, as currently not clear when GA
+            # Requested directly from CI/CD Team
+            enablePipelinesAsCode: false
+          pipeline:
+            disable-affinity-assistant: true
+            # #####
+            # Pipeline Monitoring
+            # Change the default settings to display
+            # duration for PipelineRun and TaskRun
+            # number of PipelineRuns and the success ratio
+            metrics.taskrun.level: taskrun
+            metrics.pipelinerun.level: pipelinerun
+            metrics.taskrun.duration-type: lastvalue
+            metrics.pipelinerun.duration-type: lastvalue
