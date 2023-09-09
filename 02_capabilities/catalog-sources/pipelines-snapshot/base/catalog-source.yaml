@@ -4,7 +4,7 @@ metadata:
   name: custom-rh-operators-snapshot-pipelines
   namespace: openshift-marketplace
 spec:
-  displayName: custom-rh-operators-snapshot-pipelines
+  displayName: Custom Pipelines
   image: 'quay.io/gpte-devops-automation/olm_snapshot_redhat_catalog:REPLACE_ME'
   publisher: Red Hat AgnosticD
   sourceType: grpc
