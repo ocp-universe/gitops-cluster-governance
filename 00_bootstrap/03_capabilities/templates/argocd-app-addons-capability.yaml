@@ -1,29 +1,30 @@
 # ArgoCD AppSet for bootstraping the cluster configuration
-{{- range .Values.versions.capabilities.addons }}
-{{- if .enabled }}
+{{- if .Values.versions.capabilities.addons }}
+{{- range $k, $v := .Values.versions.capabilities.addons }}
+{{- if $v.enabled }}
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: as-cap-addon-{{ .name }}
+  name: as-cap-addon-{{ $v.name }}
   namespace: openshift-gitops
 spec:
   generators:
   - git:
-      repoURL: '{{ .repo }}'
-      revision: '{{ .revision }}'
+      repoURL: '{{ $v.repo }}'
+      revision: '{{ $v.revision }}'
       directories:
-      - path: '{{ .path }}'
+      - path: '{{ $v.path }}'
   template:
     metadata:
-      name: cap-addon-{{ .name }}
+      name: cap-addon-{{ $v.name }}
     spec:
       destination:
         server: https://kubernetes.default.svc
       project: default
       source:
-        path: '{{ .path }}'
-        repoURL: '{{ .repo }}'
-        targetRevision: '{{ .revision }}'
+        path: '{{ $v.path }}'
+        repoURL: '{{ $v.repo }}'
+        targetRevision: '{{ $v.revision }}'
       syncPolicy:
         automated:
           prune: false
@@ -34,5 +35,6 @@ spec:
             duration: '10s'
             factor: 1
             maxDuration: '5m'
+{{- end }}
 {{- end }}
 {{- end }}

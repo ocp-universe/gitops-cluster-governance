@@ -21,32 +21,37 @@ versions:
     # Mandatory for all clusters
     core:
     # CatalogSource
-    - name: snapshot-pipeline
-      enabled: true
-      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
-      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
-      path: 02_capabilities/catalog-sources/pipelines-snapshot/overlays/v4.10_2022_06_06
+      snapshot-pipeline:
+        name: snapshot-pipeline
+        enabled: true
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+        path: 02_capabilities/catalog-sources/pipelines-snapshot/overlays/v4.10_2022_06_06
     # Applications
-    - name: patch-operator
-      enabled: true
-      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
-      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
-      path: 02_capabilities/applications/patch-operator
-    - name: sealed-secrets
-      enabled: true
-      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
-      revision: main
-      path: 02_capabilities/applications/sealedsecrets
-    - name: eso
-      enabled: false
-      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
-      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
-      path: 02_capabilities/applications/external-secrets-operator
+      patch-operator:
+        name: patch-operator
+        enabled: true
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+        path: 02_capabilities/applications/patch-operator
+      sealed-secrets:
+        name: sealed-secrets
+        enabled: true
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: main
+        path: 02_capabilities/applications/sealedsecrets
+      eso:
+        name: eso
+        enabled: false
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+        path: 02_capabilities/applications/external-secrets-operator
     # ####################################  
     # Individual add-ons  
     addons: 
-    - name: eso-instance
-      enabled: false
-      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
-      revision: HEAD
-      path: 02_capabilities/applications/external-secrets-operator-instance
+      eso-instance:
+        name: eso-instance
+        enabled: false
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: HEAD
+        path: 02_capabilities/applications/external-secrets-operator-instance
