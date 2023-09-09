@@ -1,8 +1,8 @@
 versions:
   ocp: 4.10.36
   ocp_major: "4.10"
-  revision: main
-  #revision: release-blade
+  #revision: main
+  revision: release-blade
   #revision: f270176e60c88704a5d3d04556e507f75969ff4e
 
   applications:
