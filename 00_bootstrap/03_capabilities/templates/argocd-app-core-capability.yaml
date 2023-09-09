@@ -8,9 +8,11 @@ metadata:
   namespace: openshift-gitops
 spec:
   generators:
-  - list:
-      elements:
-      - one: two
+  - git:
+      repoURL: '{{ .repo }}'
+      revision: '{{ .revision }}'
+      directories:
+      - path: '{{ .path }}'
   template:
     metadata:
       name: cap-core-{{ .name }}
