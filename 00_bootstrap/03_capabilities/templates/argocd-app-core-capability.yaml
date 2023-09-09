@@ -7,6 +7,10 @@ metadata:
   name: as-cap-core-{{ .name }}
   namespace: openshift-gitops
 spec:
+  generators:
+  - list:
+      elements:
+      - one: two
   template:
     metadata:
       name: cap-core-{{ .name }}
