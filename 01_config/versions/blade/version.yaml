@@ -1,7 +1,8 @@
 versions:
   ocp: 4.10.36
   ocp_major: "4.10"
-  revision: release-blade
+  revision: main
+  #revision: release-blade
      
   applications:
     # Catalog Source
@@ -13,5 +14,45 @@ versions:
       revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
     sealed_secrets:
       revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf    
-    external_secrets:
-      revision: 4568933e538c9a698957057daa28020649357805
+#    external_secrets:
+#      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+
+  capabilities:
+    # ####################################  
+    # Mandatory for all clusters
+    core:
+    # CatalogSource
+      snapshot-pipeline:
+        name: snapshot-pipeline
+        enabled: true
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+        path: 02_capabilities/catalog-sources/pipelines-snapshot/overlays/v4.10_2022_06_06
+    # Applications
+      patch-operator:
+        name: patch-operator
+        enabled: true
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+        path: 02_capabilities/applications/patch-operator
+      sealed-secrets:
+        name: sealed-secrets
+        enabled: true
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: 8e2b71026e3a7b323eb5eebce7c7ed98464bb195
+        path: 02_capabilities/applications/sealedsecrets
+      eso:
+        name: eso
+        enabled: true
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+        path: 02_capabilities/applications/external-secrets-operator
+    # ####################################  
+    # Individual add-ons  
+    addons: 
+      eso-instance:
+        name: eso-instance
+        enabled: false
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: HEAD
+        path: 02_capabilities/applications/external-secrets-operator-instance
