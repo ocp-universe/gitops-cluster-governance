@@ -48,5 +48,5 @@ versions:
     - name: eso-instance
       enabled: false
       repo: https://github.com/ocp-universe/gitops-cluster-governance.git
-      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+      revision: HEAD
       path: 02_capabilities/applications/external-secrets-operator-instance
