@@ -2,6 +2,7 @@
 {{- if .Values.versions.capabilities.core }}
 {{- range $k, $v := .Values.versions.capabilities.core }}
 {{- if $v.enabled }}
+---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:

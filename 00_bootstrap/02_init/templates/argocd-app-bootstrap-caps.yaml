@@ -1,6 +1,7 @@
 # ArgoCD AppSet for bootstraping the cluster configuration
 {{- range .Values.config.projects }}
 {{- if not .waves }}
+---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
