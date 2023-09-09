@@ -2,12 +2,21 @@
 cluster:
   name: amsterdam
   env: dev
-  #platform_version: aurora
-  platform_version: blade
+  platform_version: aurora
+  #platform_version: blade
 
 # Overwriting version details for specific capabilities
 versions:
   applications:
     external_secrets_instance:
       revision: 4568933e538c9a698957057daa28020649357805
+
+  capabilities:
+    addons:
+    - name: eso-instance
+      enabled: true
+      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+      path: 02_capabilities/applications/external-secrets-instance
+
   

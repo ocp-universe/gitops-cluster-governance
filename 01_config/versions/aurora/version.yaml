@@ -15,3 +15,32 @@ versions:
       revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf    
 #    external_secrets:
 #      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+
+  capabilities:
+    core:
+    - name: snapshot-pipeline
+      enabled: true
+      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+      path: 02_capabilities/catalog-sources/pipelines-snapshot/overlays/v4.10_2022_06_06
+    - name: patch-operator
+      enabled: true
+      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+      path: 02_capabilities/applications/patch-operator
+    - name: sealed-secrets
+      enabled: true
+      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+      path: 02_capabilities/applications/sealedsecrets
+    - name: eso
+      enabled: false
+      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+      path: 02_capabilities/applications/external-secrets-operator
+    addons: 
+    - name: eso-instance
+      enabled: false
+      repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
+      path: 02_capabilities/applications/external-secrets-instance

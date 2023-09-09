@@ -1,0 +1,32 @@
+# ArgoCD AppSet for bootstraping the cluster configuration
+{{- range .Values.versions.capabilities.core }}
+{{- if .enabled }}
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: as-cap-core-{{ .name }}
+  namespace: openshift-gitops
+spec:
+  template:
+    metadata:
+      name: cap-core-{{ .name }}
+    spec:
+      destination:
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        path: '{{ .path }}'
+        repoURL: '{{ .repo }}'
+        targetRevision: '{{ .revision }}'
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true
+        retry:
+          limit: 10
+          backoff:
+            duration: '10s'
+            factor: 1
+            maxDuration: '5m'
+{{- end }}
+{{- end }}
