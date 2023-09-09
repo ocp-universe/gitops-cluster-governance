@@ -1,7 +1,7 @@
 versions:
   ocp: 4.10.36
   ocp_major: "4.10"
-  revision: release-aurora
+  revision: HEAD
      
   applications:
     # Catalog Source
@@ -17,12 +17,16 @@ versions:
 #      revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
 
   capabilities:
+    # ####################################  
+    # Mandatory for all clusters
     core:
+    # CatalogSource
     - name: snapshot-pipeline
       enabled: true
       repo: https://github.com/ocp-universe/gitops-cluster-governance.git
       revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
       path: 02_capabilities/catalog-sources/pipelines-snapshot/overlays/v4.10_2022_06_06
+    # Applications
     - name: patch-operator
       enabled: true
       repo: https://github.com/ocp-universe/gitops-cluster-governance.git
@@ -38,6 +42,8 @@ versions:
       repo: https://github.com/ocp-universe/gitops-cluster-governance.git
       revision: 67a93094852bb99b11bbb3ec3e4c0e354a67d0bf
       path: 02_capabilities/applications/external-secrets-operator
+    # ####################################  
+    # Individual add-ons  
     addons: 
     - name: eso-instance
       enabled: false

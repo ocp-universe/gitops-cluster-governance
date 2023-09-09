@@ -15,20 +15,12 @@ spec:
           revision: HEAD
           files:
           - path: 01_config/clusters/{{ .clusterName }}/cluster.yaml
-      - merge:
-          generators:
-          - git:
-              repoURL: {{ .repo }}
-              revision: HEAD
-              files:
-              - path: 01_config/versions/{{`{{ cluster.platform_version }}`}}/version.yaml
-          - git:
-              repoURL: {{ .repo }}
-              revision: HEAD
-              files:
-              - path: 01_config/clusters/{{`{{ cluster.name }}`}}/cluster.yaml
-          mergeKeys:
-          - versions
+      - git:
+          repoURL: {{ .repo }}
+          revision: HEAD
+          files:
+          - path: 01_config/versions/{{`{{ cluster.platform_version }}`}}/version.yaml
+          pathParamPrefix: target
   syncPolicy:
     preserveResourcesOnDeletion: true
   template:
@@ -43,8 +35,9 @@ spec:
         repoURL: '{{ .repo }}'
         targetRevision: "{{`{{ versions.revision }}`}}"
         helm:
-          values: | 
-          "{{`{{ versions }}`}}"
+          valueFiles:
+          - 01_config/versions/{{`{{ cluster.platform_version }}`}}/version.yaml
+          - 01_config/clusters/{{`{{ cluster.name }}`}}/cluster.yaml
       syncPolicy:
         automated:
           prune: false
