@@ -9,4 +9,5 @@ config:
       repo: https://github.com/ocp-universe/gitops-cluster-governance.git
       branch: main
       path: '.'
+      waves: false
       

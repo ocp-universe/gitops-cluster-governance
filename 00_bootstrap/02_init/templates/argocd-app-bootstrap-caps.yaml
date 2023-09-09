@@ -1,5 +1,6 @@
 # ArgoCD AppSet for bootstraping the cluster configuration
 {{- range .Values.config.projects }}
+{{- if not .waves }}
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -38,9 +39,12 @@ spec:
         server: https://kubernetes.default.svc
       project: default
       source:
-        path: 01_config/clusters/{{`{{ cluster.name }}`}}/waves
+        path: 00_bootstrap/03_capabilities
         repoURL: '{{ .repo }}'
         targetRevision: "{{`{{ versions.revision }}`}}"
+        helm:
+          values: | 
+          "{{`{{ versions }}`}}"
       syncPolicy:
         automated:
           prune: false
@@ -51,4 +55,5 @@ spec:
             duration: '10s'
             factor: 1
             maxDuration: '5m'
+{{- end }}
 {{- end }}
