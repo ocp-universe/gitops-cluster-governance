@@ -1,5 +1,5 @@
 apiVersion: v2
-name: gitops-cluster-gov-bootstrap
+name: gitops-cluster-gov-caps
 description: Bootstrap cluster management via GitOps
 
 # A chart can be either an 'application' or a 'library' chart.
