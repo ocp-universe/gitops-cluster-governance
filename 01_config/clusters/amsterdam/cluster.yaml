@@ -2,7 +2,7 @@
 cluster:
   name: amsterdam
   env: dev
-  platform_version: HEAD
+  platform_version: aurora
   #platform_version: aurora
   #platform_version: blade
 
