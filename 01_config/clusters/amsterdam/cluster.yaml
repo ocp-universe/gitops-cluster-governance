@@ -7,10 +7,6 @@ cluster:
 
 # Overwriting version details for specific capabilities
 versions:
-  applications:
-    external_secrets_instance:
-      revision: 4568933e538c9a698957057daa28020649357805
-
   capabilities:
     addons:
       eso-instance:
