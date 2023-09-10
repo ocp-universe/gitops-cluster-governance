@@ -6,14 +6,7 @@ resources:
   - ../../../../../02_capabilities/applications/custom-app
 
 # Patch/Enhance the capability for the cluster specific needs
-#patchesStrategicMerge:
-#- cm-specific.yaml
- 
-#configMapGenerator:
-#- name: custom-config
-#  behavior: merge
-#  files:
-#  - cm-specific.yaml
+
 configMapGenerator:
 - name: custom-config
   behavior: merge
