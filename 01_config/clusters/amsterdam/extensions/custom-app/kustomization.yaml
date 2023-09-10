@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   # reference to the original capability
-  - ../../../../02_capabilities/applications/custom-app
+  - ../../../../../02_capabilities/applications/custom-app
 
 # Patch/Enhance the capability for the cluster specific needs
 configMapGenerator:
