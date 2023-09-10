@@ -16,5 +16,6 @@ resources:
 #  - cm-specific.yaml
 configMapGenerator:
 - name: custom-config
+  behavior: merge
   literals:
     - CUSTOM_ENV="amsterdam value"
