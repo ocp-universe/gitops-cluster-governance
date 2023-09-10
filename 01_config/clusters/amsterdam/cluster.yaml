@@ -19,3 +19,10 @@ versions:
         repo: https://github.com/ocp-universe/gitops-cluster-governance.git
         revision: HEAD
         path: 02_capabilities/applications/external-secrets-operator-instance
+      custom-app:
+        name: custom-app
+        enabled: true
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: HEAD
+        #path: 02_capabilities/applications/external-secrets-operator-instance
+        path: 01_config/clusters/amsterdam/extensions/custom-app
