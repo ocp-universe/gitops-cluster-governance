@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: custom-app
+  labels:
+    app: custom-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: custom-app
+  template:
+    metadata:
+      labels:
+        app: custom-app
+    spec:
+      containers:
+      - image: registry.k8s.io/busybox
+        envFrom:
+        - configMapRef:
+            name: custom-config
+        command: [ "sh", "-c"]
+        args:
+        - while true; do
+            echo -en '\n';
+            printenv CUSTOM_ENV;
+            sleep 10;
+          done;
+        imagePullPolicy: IfNotPresent
+        name: ubuntu
+  restartPolicy: Always
