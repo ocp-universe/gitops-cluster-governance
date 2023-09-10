@@ -28,4 +28,4 @@ spec:
           done;
         imagePullPolicy: IfNotPresent
         name: ubuntu
-  restartPolicy: Always
+      restartPolicy: Always
