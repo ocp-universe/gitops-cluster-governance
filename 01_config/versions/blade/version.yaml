@@ -39,7 +39,8 @@ versions:
         name: pipelines
         enabled: true
         repo: https://github.com/ocp-universe/gitops-cluster-governance.git
-        revision: main
+        #revision: main
+        revision: 434cebdb2590684d79bad4e1f139926fcd212d9e
         path: 02_capabilities/applications/openshift-pipelines/overlays/pipelines-1.8
     # ####################################  
     # Individual add-ons  
