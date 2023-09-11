@@ -1,8 +1,8 @@
 versions:
   ocp: 4.10.36
   ocp_major: "4.10"
-  #revision: main
-  revision: release-aurora
+  revision: main
+  #revision: release-aurora
 
   capabilities:
     # ####################################  
