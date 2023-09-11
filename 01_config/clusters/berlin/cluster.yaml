@@ -1,0 +1,24 @@
+# Cluster platform information
+cluster:
+  name: berlin
+  env: dev
+  platform_version: aurora
+  #platform_version: blade
+
+# Overwriting version details for specific capabilities
+versions:
+  capabilities:
+    addons:
+      eso-instance:
+        name: eso-instance
+        enabled: false
+        repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+        revision: HEAD
+        path: 02_capabilities/applications/external-secrets-operator-instance
+      # custom-app:
+      #   name: custom-app
+      #   enabled: true
+      #   repo: https://github.com/ocp-universe/gitops-cluster-governance.git
+      #   revision: HEAD
+      #   #path: 02_capabilities/applications/external-secrets-operator-instance
+      #   path: 01_config/clusters/amsterdam/extensions/custom-app
