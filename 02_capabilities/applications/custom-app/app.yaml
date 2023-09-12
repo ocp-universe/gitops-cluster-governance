@@ -28,4 +28,11 @@ spec:
           done;
         imagePullPolicy: IfNotPresent
         name: ubuntu
+        volumeMounts:
+        - name: config-volume
+          mountPath: /custom-config
       restartPolicy: Always
+      volumes:
+      - name: config-volume
+        configMap:
+          name: custom-config
