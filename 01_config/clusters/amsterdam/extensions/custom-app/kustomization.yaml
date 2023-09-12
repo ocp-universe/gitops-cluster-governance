@@ -11,4 +11,4 @@ configMapGenerator:
 - name: custom-config
   behavior: merge
   literals:
-    - CUSTOM_ENV="amsterdam value 22"
+    - CUSTOM_ENV="amsterdam value"
