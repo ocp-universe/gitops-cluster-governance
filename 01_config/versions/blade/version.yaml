@@ -53,6 +53,7 @@ versions:
         path: 02_capabilities/applications/external-secrets-operator-instance
       custom-app:
         name: custom-app
+        # .
         enabled: false
         repo: https://github.com/ocp-universe/gitops-cluster-governance.git
         revision: HEAD
